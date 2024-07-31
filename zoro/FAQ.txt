@@ -1,0 +1,147 @@
+1、16、12bit量化要关闭定点化
+2、使用内部Inference
+cp nna2
+ivse/prebuilt/Magik/InferenceKit/venus/mips/internal/7.2.0/2.29/lib/uclibc
+ivse/prebuilt/Magik/InferenceKit/third_party/AIP_T41/7.2.0/2.29/lib/uclibc
+ivse/prebuilt/Magik/InferenceKit/third_party/DRIVERS/T41/7.2.0/2.29/lib/uclibc
+TOPDIR ?= /home/user/sfyan/uclibc_t41_inter/
+├── include
+│   ├── common
+│   │   ├── common_def.h
+│   │   ├── common_inf_c.h
+│   │   ├── common_inf.h
+│   │   ├── common_type.h
+│   │   └── common_utils.h
+│   ├── core
+│   │   ├── data.h
+│   │   ├── tensor.h
+│   │   └── type.h
+│   ├── imgproc_api.h
+│   ├── postproc_api.h
+│   ├── tensor_api.h
+│   ├── type_api.h
+│   ├── utils
+│   │   ├── all.h
+│   │   ├── imgproc.h
+│   │   ├── imgproc_rm.h
+│   │   ├── imgproc_type.h
+│   │   ├── mem.h
+│   │   └── postproc.h
+│   ├── venus_api.h
+│   └── venus.h
+└── lib
+    └── uclibc
+        ├── libaip.a
+        ├── libaip.so
+        ├── libdrivers.a
+        ├── libdrivers.m.a
+        ├── libdrivers.m.so
+        ├── libdrivers.so
+        ├── libvenus.a
+        ├── libvenus.d.so
+        ├── libvenus.p.so
+        └── libvenus.so
+3、yolov5
+~/miniconda3/envs/fqat-cywang/lib/python3.7/site-packages/torch/onnx/utils.py 
+def _export(onnx_shape_inference=True==>False):
+~/miniconda3/envs/fqat-cywang/lib/python3.7/site-packages/torch/onnx/symbolic_opset9.py
+def _slice(g, input, axes, starts, ends):
+    assert len(starts) == len(ends)
+    # if len(starts) == 1 and starts[0] == 0 and ends[0] == 9223372036854775807:
+    #     return input
+    return g.op("Slice", input, axes_i=axes, starts_i=starts, ends_i=ends)
+4、new-TransFormKit
+mean and var 要给三个参数，给一个不得行，默认值为：
+mean = [0,0,0]
+var = [1,1,1]
+现在的可执行文件，可直接传入配置文件（与whl安装包配置文件相同）进行参数配置
+
+
+5、 inference_magik compute data
+量化模型==>转换模型==>PC端推理
+magik_Inference:
+1、转换生成的compare_120.pb
+2、输入数据（npy）
+
+PC ：magik_Inference ==> inference_data
+板端 : magik_Inference ==> ptq_dump_path
+注：如果数据前32位和末尾32位可以对上，但中间数据对不上，可能是数据格式不一致（nchw/nhwc ...）
+
+
+6、mmyolov8
+    1、rewrite_module.py==>_rewrite
+    line 341: add if str(fn) == 'YOLOv5DetDataPreprocessor()' or str(fn) =='BatchTaskAlignedAssigner()':
+                    return fn
+                    if str(fn) == 'YOLOv5DetDataPreprocessor()' or str(fn) =='BatchTaskAlignedAssigner()':
+            return fn
+    line 243: check_module #else部分
+    2、symbolic_trace.py
+    line 711: #self.check_graph()
+    3、不同版本python，torch报conv2d不支持的错误，默认pip install mmcv==2.0.0
+7、TrainingKit dump data
+MAGIK_TRAININGKIT_DEVP_DUMP=1 : dump中间层data
+MAGIK_TRAININGKIT_DUMP=1 : dump input data and output data 
+MAGIK_TRAININGKIT_PATH="./tmp" 
+
+8、 1)8bit没有精度，debug查看相似度
+    2)测试16bit精度
+    3)16bit没有精度，测试feature32,weight8和feature8weight32
+
+9、 ffzhou@10.3.2.235:/tmp ffzhou123@9
+
+10、RuntimeError: CUDA error: an illegal memory access was encountered
+Exception raised from copy_kernel_cuda at /pytorch/aten/src/ATen/native/cuda/Copy.cu:200 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x42 (0x7f102ca162f2 in /home/user/miniconda3/envs/v8/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x5b (0x7f102ca1367b in /home/user/miniconda3/envs/v8/lib/python3.8/site-packages/torch/lib/libc10.so)
+。。。
+上述错误是由于torch.load(maplocation='cpu'),后面model和data放在gpu上导致的
+
+11、转onnx发现add没有rewrite，可能是model_only方式加载模型，加载后没有进行rewrite
+
+11、yolox  TrainingKit commit：00020100_88e80c0
+
+12、inference.cpp 分内部模型推理和外部推理，相关函数名有变化
+
+13、Makefile
+T41会多出  aip drivers
+TOPDIR ?= /home/user/sfyan/ivse/prebuilt/Magik/InferenceKit/venus/mips/T40/public/7.2.0/2.29
+or
+TOPDIR ?= /data_bak/cywang/git_magik-toolkit/InferenceKit/nna1/mips720-glibc229
+ivse: T40 : agt  T41 : nna2
+CROSS_COMPILE:=/home/user/sfyan/Magiktools/mips-gcc720-glibc226-r4.0.0/bin/mips-linux-gnu-
+编译一般选用这个
+
+14、上板对数据先用generate读取.bin生成.h，然后编译生成推理的可执行文件，上板不再需要传入.bin输入。
+
+15、输出onnx报错：
+ File "/home/user/anaconda3/envs/gestures/lib/python3.9/site-packages/torch/jit/_trace.py", line 127, in forward
+    graph, out = torch._C._create_graph_by_tracing(
+  File "/home/user/anaconda3/envs/gestures/lib/python3.9/site-packages/torch/jit/_trace.py", line 118, in wrapper
+    outs.append(self.inner(*trace_inputs))
+  File "/home/user/anaconda3/envs/gestures/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/user/anaconda3/envs/gestures/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1039, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "", line 9, in forward
+  File "/home/user/anaconda3/envs/gestures/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1130, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'QuantizeConv2DWrapper' object has no attribute 'weight'
+forward代码中存在通过model.conv.weight进行判断的代码。
+
+16、训练4bit过程中loss不下降：
+1>确认是否load测试效果最好的float模型;
+2>测试8bit精度是否正常，正常的话测试8bit训练，非正常从量化入手（量化有问题），debug，观察相似度和error是否正常；
+3>上述结果均正常，修改训练代码，通过降低学习率、关闭数据增强等手段降低loss；
+4>训练代码是否存在问题。
+
+17、AttributeError: Can't pickle local object 'MagikDebug.get_float_outputs.<locals>.SaveFloatOutput'
+quantize_ops.py 某个函数的传参存在问题，(imtk_qtp.quantize_****_ptq(*args))
+
+18、yolov3
+/data_bak/sfyan/Magiktools/Compare_data/DEVICE_T41/yolov3
+/data_bak/sfyan/classify_detect_ingenic/classify_detect_interface_T41
+
+19、上板venus版本低于模型版本不可行，该情况pull新版venus即可，注意：pull新版本记得cp *.so到板端，不然还是报上面相同的错误。venus版本高于模型版本可行
+
+
+

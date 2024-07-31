@@ -1,0 +1,105 @@
+{
+    /*editor*/
+    "editor.formatOnPaste": true, //åœã„§²˜ç’å­˜—èˆµ ç…¼åŒ–æµ ï½‡ 
+    "editor.formatOnType": true, //æ•æ’®Œæ¶“€ç›Œæµ ï½‡ è‡ô’Šã„¦ ç…¼åŒ–
+    "editor.smoothScrolling": true, //æµ£è·¨¼–æˆ‘å™ã„¦»šåŠã„¥˜éªè™«»‘
+    "editor.tabCompletion": "on", //åô•ª”¨Tabç›ãƒ¥…¨
+    "editor.fontFamily": "'Jetbrains Mono', 'æ€å©§æ¦›‘æµ£“'", //ç€›—æµ£“ç’å‰§ç–†é”›Œæ¶“ô‘æ±‰å–œå¨†¢Jetbrains Monoæµ£œè‹è¾¨–‡ç€›—æµ£“é”›Œæ€å©§æ¦›‘æµ£“æµ£œæ¶“ô’­–‡ç€›—æµ£“
+    "editor.fontLigatures": true, //åô•ª”ã„¥­—æµ£“æ©ç€›—
+    "editor.detectIndentation": false, //æ¶“åŸè½°ºæ–‡æµ è·º†…ç€¹å½’€‰æ‹â•ƒç¼‰æ©›ç”ã„¥ˆæƒ°ã€ƒç»—ôˆ¿˜æ˜ô•ªâ”–æ ¼
+    /*
+    å› æ¶“çƒ˜œ‰æ—è·º€™VSCodeçš„åˆã‚†–ô’­˜ô•¬”™ç’‡ô•ªš„
+    */
+    // "editor.lineNumbers": "relative",//ç›ç¨¿ô”¼ç›Œå·
+    // "editor.lineNumbersMinChars": 2, // æ©™ç†çº­ô”‰¿åå……å¨‡æ–‡æµ è·º¾ˆçŸô’¶¼Œç›Œåé”‹ æ¶”Ÿæœ‰æœ€çç€¹è—‰å®³
+    "editor.fontSize": 16, //ç€›—æµ£“æ¾¶Ñƒ°
+    "editor.insertSpaces": true, //æ•è¹­¸‹Tabé”ô”‹—èˆµ’å…¥4æ¶“ô”â”–æ è‰°€Œæ¶“æ˜ô•¨ˆæƒ°ã€ƒç»—¦
+    "editor.copyWithSyntaxHighlighting": false, //æ¾¶åˆæœµå”¬ç æ—è·º¤åˆå‰å‡½æ–‡æœô‘‘€Œæ¶“æ˜ô•«¿ç’‡ô’­³•æ¥‚˜æµœô”ƒè—‰¤åˆæœµº†
+    "editor.suggest.snippetsPreventQuickSuggestions": false, //æ©™æ¶“ô’¼€æ¶“å¯®€æ•ˆæœæ¿‚è—‰ƒéƒæˆ’¸€æ å‡¤¼Œæô”ô”·æ˜ô•¨› æ¶“è½°¸€æ¶“ªbugé”›Œå¯¤é¸¿ô““å…è™«‰
+    "editor.stickyTabStops": true, //åœã„§ç¼‰æ©›æ¶“Šç»‰è¯²Šã„¥…‰æ ‡æ—è·º››æ¶“ô”â”–æ é—´¸€ç¼„æãƒ§Ğ©åŠô‹ ¼Œçå˜è±¢æµ£›ç€¹ƒæµ ô‘˜ô•¨ˆæƒ°ã€ƒç»—¦(\t)æ¶“€æ ·
+    "editor.wordBasedSuggestions": "off", //å…æŠ½—ô’¬Ÿè½°ºæ–‡æµ æœµè…‘å•ç’‡æãƒ¨”æƒå´‡š„åŠŸèƒæ–¤¼ˆç’‡ô’¯¨€è‡ô’ç”«çš„è”æƒå†²æ°¨æ¾¶Ÿæµœ†é”›Œå¯®€æµœ†æ©™æ¶“ô‘¼šç€µè‰°‡å¯¸”¨vscodeå†™MarkDownæ—å‰š„æ¶“ô’­–‡å¯®•åå³°¼‚ç”¯æ­Œ”æƒç­¹¼‰
+    "editor.linkedEditing": true, //htmlæ ‡ç»›æ‡ô’Šã„©‡å‘è—‰é”›ˆå–œæ¾¶Ñ„™ô”Š¥”é”›ç¼ˆæµœæ¶“éœ€ç‘•Auto Rename Tagæ’æµ æœµº†é”›é”›‰
+    "editor.wordWrap": "on", //åœã„¦–‡æµ è·º†…ç€¹è§„å­©å‡ºvscodeæ˜å‰§ãšåŒå“„ŸŸæ—æƒ°‡ô’Šã„¦Š˜ç›Œ
+    "editor.renderControlCharacters": true, //ç¼‚–æˆ‘å™ã„¤è…‘æ˜å‰§ãšæ¶“åô•«§çš„æÑƒˆè·º­—ç»—¦
+    "editor.renderWhitespace": "boundary", //é™ã‚„º†æ¶“ã‚„é‡œå•ç’‡æ¶”‹é—å¯¸”ã„¤ºåˆ†éš”å•ç’‡çš„æ¶“€æ¶“ô”â”–æ ç¡·¼Œæµ ãƒ¤¸€æ¶“ô’°çæ‰®‚åœ­š„æ å³°­æµ£è·¨â”–æ ç…ô•«§
+    /*editor cursor*/
+    "editor.cursorStyle": "line" // å…‰æ ‡æ å³°¼æ¶“è™¹åšæ¡
+    "editor.cursorWidth": 2, // å…‰æ ‡ç€¹è—‰å®³
+    "editor.cursorBlinking": "smooth", //æµ£è·¨¼–æˆ‘å™ã„¥…‰æ ‡çš„é—ô”ƒéªè™«»‘é”›Œæœ‰å‘ç…å‘Š„Ÿ
+    // "editorCursor.foreground": "#F08080", // å…‰æ ‡æ£°œè‰è¯§¼Œåô•§äº’æ˜ô•¨å…ô’¯¿›åˆå •¢œè‰è¹­å”¬ç 
+    "editor.cursorSmoothCaretAnimation": "on", //ç’â•…‰æ ‡ç»‰è¯²Šã„£€æ’å…ãƒ¥˜å¯°—éªè™«»‘
+    /*terminal*/
+    "terminal.integrated.defaultProfile.linux": "/usr/bin/zsh", //ç†ç¼ˆç»”ô•«ô“£æ¶“ºcmdé”›Œæ¶“ô‘æ±‰å§£”æˆƒå–œå¨†¢cmdæµ£œæ¶“è™¹»ˆç»”¯
+    "terminal.integrated.cursorBlinking": true, //ç¼ˆç»”ô•¨…‰æ ‡é—ô”ƒ
+    "terminal.integrated.rightClickBehavior": "default", //åœã„§»ˆç»”ô•§è…‘åæŠ½”ô”‹—èˆµ˜å‰§ãšèœå•è€Œæ¶“æ˜ô•ª²˜ç’è¾¾¼ˆæ¶“ô‘æ±‰å–œæ¿‚æ–¤¼‰
+    "terminal.integrated.fontSize": 16,
+    /*files*/
+    "files.autoGuessEncoding": true, //ç’©VScodeè‡ô’Šã„§Œœå©§æµ ï½‡ æ–‡æµ å‰š„ç¼‚–ç æ ç…¼
+    "files.autoSave": "onFocusChange", //"afterDelay" åœã„§¼–æˆ‘å™ã„¥ã‘åè¤„ôˆœ‚è§„—æƒ°‡ô’Šã„¤¿ç€›˜é”›Œæ©™æµ£èƒ¯‡ô’Šã„¤¿ç€›˜æ©‘æ¶”æˆæƒ§ˆæ‰³€œæ— æ„ŸçŸãƒ¢€çš„æµ£“æ¥ Œ
+    "files.exclude": { //éšè—æ¶“€æµœ›çº°çœè‚©š„æ–‡æµ è·ºã™
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        // "**/tmp": true,
+        "**/node_modules": true,
+        "**/bower_components": true
+    },
+    "files.watcherExclude": { //æ¶“ç»±ãˆ ¼•æ¶“€æµœ›æ¶“è¹‡…ç‘•ç»±ãˆ ¼•çš„æ¾¶Ñ„–‡æµ è·ºã™æµ ãƒ¥‡ç‘å†…ç€›˜å’ŒCPUå¨‘ˆè€—
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        // "**/tmp/**": true,
+        "**/bower_components/**": true,
+        "**/dist/**": true
+    },
+    /*workbench*/
+    "workbench.tree.indent": 14,
+    "workbench.list.smoothScrolling": true, //æµ£æŒ–‡æµ è·ºˆ—ç›ã„¦»šåŠã„¥˜éªè™«»‘
+    "workbench.editor.enablePreview": false, //æ‰“å¯®€æ–‡æµ èˆµ—æœµ¸æ˜ô•¥€œæ£°„ç‘™ˆâ€å¦¯â€³¼é”›Œåå†²œã„§¼–æˆ‘æ¶“€æ¶“ô“–‡æµ èˆµ—èˆµ‰“å¯®€ç¼‚–æˆ‘åôˆ™¸€æ¶“ô“–‡æµ æœµ¸æµ¼šç‘•†ç›–è¤°“å‰ç¼‚–æˆ‘çš„æ–‡æµ æƒ°€Œæ˜ô•©–æ¿ç¼“æ¶“€æ¶“ô“ ‡ç»›é¹ƒã€‰
+    "workbench.editor.wrapTabs": true, //éšè—æ–æ¿ç¼“æ— æ ‡æ£°˜æ–‡æµ èˆµ—å‰š„â€œé€‰æ‹â•„ô”°ç‘·€é”›Ÿâ€æç»€çŒ´¼ˆæ¶“ô‘æ±‰å–œæ¿‚æ–¤¼Œåô•§äº’åˆ æ‰å§ã‚ˆ¡Œç„è·ºCtrl+Næ‰“å¯®€æ— æ ‡æ£°˜æ–ç‰ˆ–‡æµ å‰œ‹çœ‹æ¶“hiddençš„æ•ˆæœé”›‰
+    "workbench.colorTheme": "One Dark Pro", //æ¶“å©š¢˜
+    "workbench.editor.empty.hint": "hidden",
+
+    /*explorer*/
+    "explorer.confirmDelete": false, //åˆ é™ã‚†–‡æµ èˆµ—æœµ¸å¯®ç‘°‡è™¹â€˜ç’ã‚…è„Šç»—é”›ˆå› æ¶“å“„¾ˆçƒôˆ¤¼‰
+    "explorer.confirmDragAndDrop": false, //å¯°€å®¸ôˆç«Ÿæ–‡æµ æƒ°µ„å©§ç» ï¼„†å™ã„¦‹–åŠã„¤¸œç‘—æŒãƒ§Ğ©åŠ¨/æ¾¶åˆèˆµ—æœµ¸æ˜å‰§ãšçº­ô”ô“‰ç»—åï½¼ˆå› æ¶“å“„¾ˆçƒôˆ¤¼‰
+    /*search*/
+    "search.followSymlinks": false, //æô”ô”·åô•§äº’å‡ç‘vscodeçš„CPUå’Œå†…ç€›˜å ç”¨
+    /*window*/
+    "window.menuBarVisibility": "toggle", //éšè—èœå•æ 
+    // "window.menuBarVisibility": "visible",//åœã„¥…ã„¥±å¦¯â€³¼æ¶“‹æµ ç„èˆµ˜å‰§ãšç»—åï½‰ã€Šéƒã„¨œå•é”›ˆå¨Œâ„ƒœ‰èœå•å¯°ˆéšæƒ§—é”›‰
+    "window.dialogStyle": "custom", //æµ£è·¨”ã„¦›æ‘…é”‹œ‰VSCodeçš„UIæ¤‹æ è‚©š„å¯®åœ­ª—æç»€çŒ´¼ˆæ›å¯¸¾ç‘™‚é”›‰
+    "window.zoomLevel": 1,
+    /*debug*/
+    "debug.internalConsoleOptions": "openOnSessionStart", //å§£å¨†Â¤°ƒç’‡•éƒèŠ¥‰“å¯®€ç’‹ƒç’‡•æÑƒˆè·ºå¸®¼Œæ–é€›ç©¶ç’‹ƒç’‡•
+    "debug.showBreakpointsInOverviewRuler": true, //åœã„¦»šåŠã„¦â„ƒ ‡çè½°¸Šæ˜å‰§ãšæ–ô’®‚åœ­š„æµ£ç¼ƒô””¼Œæ¸šå¤¸ºæŸãƒ¦‰ç‚¬–ô’®‚åœ­š„æµ£ç¼ƒ®
+    "debug.toolBarLocation": "docked", //å›å“„®šç’‹ƒç’‡•æ—è·ºä¼å…é”‹ï¼„š„æµ£ç¼ƒô””¼Œé˜å‰ô‘©éô”‹Œâ€²å”¬ç å†…ç€¹ç™¸¼ˆæ¶“ô‘æ±‰å–œæ¿‚æ–¤¼‰
+    "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup", //åœã„¥ô•¨Šã„¨°ƒç’‡•æµ¼šç’‡å‰æ·‡ç€›˜é™ã‚„º†æ— æ ‡æ£°˜æ–‡å¦—ï½„äº’æ¾¶–çš„æ–‡å¦—ï½¼ˆå§£•ç»”Ÿæµ£ åˆ›å¯¤è½°º†æ— æ ‡æ£°˜æ–‡å¦—ï½…æ°¨ç’‡å­˜˜æµ£ æ è§„œô‘ç—…æœ‰æƒå……¿ç€›˜ç€¹ƒçš„æ„æ€é”›ˆè‡å†²°‘æˆ‘æ˜ô•«¿™æ é£š„ã€‚é”›‰é”›‰
+    "debug.onTaskErrors": "showErrors", //æ£°„åô•¨Šã„¤æ¢åŠâ€³‡æ´ª”™åæ˜å‰§ãšé”™ç’‡ô•²¼Œéªæœµ¸åô•¨Šã„¨°ƒç’‡•
+    //  python
+    "python.defaultInterpreterPath": "E:\\paragram\\Anaconda\\python.exe",
+    // // èƒŒæ™ô•©’æµ ¶
+    "background.fullscreen": {
+        "images": [
+            "file:///home/user/cywang/mikasa.png"
+        ],
+        "opacity": 0.93,
+        "size": "cover",
+        "position": "center",
+        "interval": 0
+    },
+    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "workbench.preferredHighContrastColorTheme": "One Dark Pro",
+    "workbench.preferredHighContrastLightColorTheme": "One Dark Pro",
+    "workbench.preferredLightColorTheme": "One Dark Pro",
+    // // å‡èŠ¥•ç‰ˆæ•é‡Š
+    // "fileheader.customMade": {
+    //     "Author": "asce",
+    //     "Date": "", // æ–‡æµ è·ºˆ›å¯¤çƒ˜—å •—´
+    //     "LastEditors": "asce", // æœ€åç¼‚–æˆ‘æ–‡æµ å‰š„æµœº
+    //     "LastEditTime": "", // æ–‡æµ èˆµœ€åç¼‚–æˆ‘æ—å •—´
+    //     "FilePath": "", // æ–‡æµ è·ºœã„©ã€ç›ô”‰è…‘çš„ç›ç¨¿ô”¼ç’ºô•¨¾„ è‡ô’Šã„¦›å­˜–°
+    // },
+}
