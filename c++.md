@@ -1,0 +1,1 @@
+std::cout << std::fixed << std::setprecision(8); // 设置输出为固定小数点形式，并指定精度为8位
